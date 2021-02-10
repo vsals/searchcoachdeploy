@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.0",
+  "id": "f97153b9-8137-4895-a6c3-d40aa3dbe7f4",
+  "packageName": "com.microsoft.teams.searchcoach",
+  "developer": {
+    "name": "Search Coach",
+    "websiteUrl": "<website Url>",
+    "privacyUrl": "<company privacy Url>",
+    "termsOfUseUrl": "<company terms of use Url>"
+  },
+  "localizationInfo": {
+    "defaultLanguageTag": "en"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Search Coach",
+    "full": "Search Coach"
+  },
+  "description": {
+    "short": "Helps students learn how to search the internet effectively",
+    "full": "Search Coach is designed for students who have little-to-no experience searching the internet for information. Once added to a Teams channel, students can navigate to a tab that includes a Microsoft Bing search box and links that let students experiment with using search operators or limiting a search query by location, domain type, and time range. Search Coach provides educational content throughout the experience, explaining new concepts in plain language and guiding students to make sense of search results. In addition, educators have the option to send questions via the Search Coach bot as an easy way to quiz students on what they've learned."
+  },
+  "accentColor": "#7BFFFE",
+  "bots": [
+    {
+      "botId": "<<botId>>",
+      "scopes": [
+        "personal",
+        "team"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "<<botId>>",
+      "canUpdateConfiguration": true,
+      "commands": [
+        {
+          "id": "submitQuestion",
+          "type": "action",
+          "title": "Send question card",
+          "description": "Command to run action to send quiz question card.",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": [
+            "message",
+            "compose"
+          ],
+          "parameters": [
+            {
+              "name": "fetchTask",
+              "title": "fetchTask",
+              "description": "Command to run action to sign in or send eGift card",
+              "inputType": "text"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "SearchCoach",
+      "name": "Search Coach",
+      "contentUrl": "<<appdomain>>/search-landing-page",
+      "websiteUrl": "<<appdomain>>/search-landing-page",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://<<appDomain>>/configtab",
+      "canUpdateConfiguration": false,
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "validDomains": [
+    "<<appDomain>>"
+  ],
+  "webApplicationInfo": {
+    "id": "<<botId>>",
+    "resource": "<ApplicationIdURI>"
+  }
+}
