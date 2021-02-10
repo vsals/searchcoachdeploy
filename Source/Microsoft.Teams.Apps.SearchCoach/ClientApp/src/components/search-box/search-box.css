@@ -1,0 +1,12 @@
+﻿.search-box {
+    position: relative;
+    left: 0%;
+    width: 430px;
+}
+
+.dark-container .search-box {
+    position: relative;
+    left: 0%;
+    width: 430px;
+    border: 0.2rem solid #fff;
+}
